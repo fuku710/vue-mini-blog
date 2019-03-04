@@ -13,8 +13,8 @@ import Post from "./components/Post.vue";
 
 export default {
   name: "app",
-  updated: function() {
-    console.log(this.posts);
+  components: {
+    Post
   },
   data: function() {
     return {
