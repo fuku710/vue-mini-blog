@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <textarea v-model="inputText"/>
-    <button @click="sendPost">投稿</button>
+    <form id="post-form">
+      <textarea id="post-form-input" v-model="inputText"/>
+      <button type="button" id="post-form-button" @click="sendPost">投稿</button>
+    </form>
     <post v-for="post in reversePosts" :key="post.id" :text="post.text"/>
   </div>
 </template>
@@ -48,5 +50,29 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#post-form {
+  width: 320px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+}
+#post-form-input {
+  height: 120px;
+  resize: none;
+}
+#post-form-button {
+  width: 80px;
+  height: 24px;
+  background: skyblue;
+  font-size: 16px;
+  color: white;
+  margin: auto;
+  border: none;
+  border-radius: 2px;
+  outline: none;
 }
 </style>
